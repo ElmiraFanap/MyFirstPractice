@@ -28,8 +28,10 @@ public class EmployeeService {
     public Response createEmployee(Employee employee) {
 
         employee = new Employee(1,"Elmira");
-        employeeBusiness.saveEmployee(employee);
-        return Response.status(200).build();
+        Result result = employeeBusiness.saveEmployee(employee);
+        return Response.status(result.getMessageCode())
+                       .entity(result.getMessage())
+                       .build();
     }
 
     @GET

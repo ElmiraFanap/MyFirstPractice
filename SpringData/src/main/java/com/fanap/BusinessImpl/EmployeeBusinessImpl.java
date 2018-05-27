@@ -22,9 +22,10 @@ public class EmployeeBusinessImpl implements EmployeeBusiness {
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void saveEmployee(Employee employee) {
+    public Result saveEmployee(Employee employee) {
 
         employeeRepositoryDao.save(employee);
+        return  new Result(200,"Employee created successfully",null);
     }
 
     @Override
