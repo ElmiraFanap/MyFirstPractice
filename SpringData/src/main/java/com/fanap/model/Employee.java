@@ -7,6 +7,9 @@ import javax.persistence.Id;
 @Entity
 public class Employee {
 
+    public Employee() {
+    }
+
     public Employee(long employeeId, String employeeName) {
         this.employeeId = employeeId;
         this.employeeName = employeeName;

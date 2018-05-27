@@ -26,8 +26,8 @@ public class EmployeeService {
 
     @POST
     public Response createEmployee(Employee employee) {
-        employee.setEmployeeId(1);
-        employee.setEmployeeName("Elmira");
+
+        employee = new Employee(1,"Elmira");
         employeeBusiness.saveEmployee(employee);
         return Response.status(200).build();
     }
